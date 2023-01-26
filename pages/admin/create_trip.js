@@ -10,6 +10,8 @@ import { DataContext } from "../../context/DataContext";
 
 const CreateTrip = () => {
   const { handleCreatetrip, isLoading }  = useCreateTrip()
+  const { availableBuses } = useContext(DataContext)
+  console.log?.(availableBuses, "Available Buses")
   
 
   return (
@@ -89,7 +91,11 @@ const CreateTrip = () => {
                 />
                 {touched.fare && errors.fare && (<p className="text-red-600">{errors.fare}</p>)}
               </div>
-              <Input
+              <div className="w-[400px]  h-[40px] rounded-md border-[1px] border-[#C0C0C0] border-solid">
+                {/* {availableBuses} */}
+              </div>
+
+              {/* <Input
                   type={"text"}
                   placeholder={"Bus ID"}
                   label={"Bus ID"}
@@ -99,7 +105,7 @@ const CreateTrip = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.bus_id}
-                />
+                /> */}
               <div className="text-center">
                 <input
                   className="mt-[60px] text-white w-[500px] py-[10px] rounded-full cursor-pointer bg-[#004643]"

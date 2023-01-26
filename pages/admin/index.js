@@ -22,14 +22,28 @@ import { ColorRing } from "react-loader-spinner";
 import { useRouter } from "next/router";
 import { AuthContext } from "../../Context/AuthContext";
 import { useContext } from "react";
+import Cookies from "js-cookie";
+import { useFetchAvailableBuses } from "../../helpers/fetchAvailableBuses";
 
 const login = () => {
   const { onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
-  const router = useRouter();
   const { handleSubmit, isLoading } = useAdminLogin();
+  const token = Cookies.get("user_data")
+    ? JSON.parse(Cookies.get("user_data")).token
+    : null;
+  const router = useRouter();
+  const availableBuses = Cookies.get('available_buses') ? JSON.parse(Cookies.get('available_buses')) : null
+
+  useEffect(() => {
+    token ? router.push(`${router.pathname}`) : router.push("/admin");
+    console.log(token, "AuthState");
+    console.log(availableBuses, "Available")
+  }, []);
+
+  
   
 
   return (

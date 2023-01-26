@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 import { useContext } from 'react'
 import { DataContext } from './context/DataContext'
 
-const token = Cookies.get("user_data") && JSON.parse(Cookies.get("user_data")).token
+const token = Cookies.get("user_data") ? JSON.parse(Cookies.get("user_data")).token : []
 
 const authApi = axios.create({
   baseURL: 'https://way-farer-sord.onrender.com/',
