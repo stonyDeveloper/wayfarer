@@ -8,16 +8,17 @@ const DataContext = createContext({});
 
 
 const DataProvider = ({ children }) => {  
+   const [showDropdown, setShowDropdown] = useState(false)
    const [user, setUser] = useState()
    const [availableBuses, setAvailableBuses] = useState([])
    const { getBuses }  = useFetchAvailableBuses()
+
 
    
 
 
    useEffect(() => {
      setUser(Cookies.get("user_data") ? JSON.parse(Cookies.get("user_data")) : [])
-     getBuses()
    }, [])
 
   
@@ -33,7 +34,9 @@ const DataProvider = ({ children }) => {
       //  goToForgotPassword
       user,
       setUser,
-      availableBuses
+      availableBuses,
+      showDropdown,
+      setShowDropdown
       }}
     >
       {children}

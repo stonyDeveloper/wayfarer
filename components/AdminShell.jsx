@@ -35,7 +35,7 @@ const AdminShell = ({ children }) => {
     <div>
       <Stack direction={"row"}>
         <div className="pt-[70px] pl-[30px] w-[27%] min-h-screen bg-[#004643] text-white">
-          <p className="text-[30px]">Admin Dashboard</p>
+          <Link href="/admin/dashboard"><p className="text-[30px]">Admin Dashboard</p></Link>
           <div>
             {user
               ? user?.first_name?.[0]?.toUpperCase() +
@@ -99,9 +99,10 @@ const AdminShell = ({ children }) => {
             </Link>
             <div
               onClick={handleLogout}
-              className="mt-[200px] pl-[15px] cursor-pointer"
+              className="mt-[200px] pl-[15px] cursor-pointer flex items-center gap-2"
             >
-              Log Out
+               <i class="fa fa-sign-out"></i>
+              <p>Log Out</p>
             </div>
           </div>
         </div>
@@ -111,7 +112,4 @@ const AdminShell = ({ children }) => {
   );
 };
 
-export default AdminShell
-
-
-
+export default AdminShell;

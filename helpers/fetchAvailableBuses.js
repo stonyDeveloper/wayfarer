@@ -7,6 +7,7 @@ export const useFetchAvailableBuses = () => {
     try {
       const data = await authApi.get("api/v1/trip/available-buses");
       console.log("Set", data?.data?.data);
+      
 
       Cookies.set("available_buses", JSON.stringify(data?.data?.data));
 

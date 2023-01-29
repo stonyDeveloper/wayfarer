@@ -6,6 +6,7 @@ const useLogout = () => {
   const router = useRouter()
   const handleLogout = () => {
     Cookies.remove('user_data')
+    Cookies.remove('available_buses')
     router.push('/admin')
   }
   return { handleLogout }

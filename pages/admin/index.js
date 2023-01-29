@@ -35,12 +35,11 @@ const login = () => {
     ? JSON.parse(Cookies.get("user_data")).token
     : null;
   const router = useRouter();
-  const availableBuses = Cookies.get('available_buses') ? JSON.parse(Cookies.get('available_buses')) : null
+  
 
   useEffect(() => {
     token ? router.push(`${router.pathname}`) : router.push("/admin");
     console.log(token, "AuthState");
-    console.log(availableBuses, "Available")
   }, []);
 
   

@@ -9,8 +9,8 @@ const useRegisterBus = () => {
 
   const handleRegisterBus = async (trip) => {
     try {
-        const token = Cookies.get("user_data") && JSON.parse(Cookies.get("user_data")).token
-        console.log(token,"token")
+        // const token = Cookies.get("user_data") && JSON.parse(Cookies.get("user_data")).token
+        // console.log(token,"token")
       setIsLoading(true);
       const { data } = await authApi.post("/api/v1/trip/register-bus", trip);
       console.log(data);
