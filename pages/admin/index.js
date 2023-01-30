@@ -37,7 +37,7 @@ const Login = () => {
 
   useEffect(() => {
     token ? router.push(`${router.pathname}`) : router.push("/admin");
-  },);
+  },[]);
 
   
   
