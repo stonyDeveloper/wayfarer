@@ -20,8 +20,6 @@ import { Formik } from "formik";
 import { adminLogin, useAdminLogin } from "../../Authentication/Login/login";
 import { ColorRing } from "react-loader-spinner";
 import { useRouter } from "next/router";
-import { AuthContext } from "../../Context/AuthContext";
-import { useContext } from "react";
 import Cookies from "js-cookie";
 import { useFetchAvailableBuses } from "../../helpers/fetchAvailableBuses";
 

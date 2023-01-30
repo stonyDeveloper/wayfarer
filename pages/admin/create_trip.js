@@ -1,11 +1,11 @@
 import AdminShell from "../../components/AdminShell";
 import Input from "../../components/Input";
 import "react-datetime/css/react-datetime.css";
-import { createTripSchema } from "../../Trips/Create_Trip/createtripSchema";
+import { createTripSchema } from "../../Trips/Create_Trip/createTripSchema";
 import { Form, Formik } from "formik";
 import useCreateTrip from "../../hooks/useCreateTrip";
 import { useContext, useState } from "react";
-import { DataContext } from "../../context/DataContext";
+import { DataContext } from "../../Context/DataContext";
 import Cookies from "js-cookie";
 import InputFieldDropdown from "../../components/InputFieldDropdown";
 import { ColorRing } from "react-loader-spinner";
