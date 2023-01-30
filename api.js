@@ -1,7 +1,5 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import { useContext } from 'react'
-import { DataContext } from './context/DataContext'
 
 const token = Cookies.get("user_data") ? JSON.parse(Cookies.get("user_data")).token : []
 
