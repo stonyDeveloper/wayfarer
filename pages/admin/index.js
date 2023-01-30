@@ -25,7 +25,7 @@ import { useContext } from "react";
 import Cookies from "js-cookie";
 import { useFetchAvailableBuses } from "../../helpers/fetchAvailableBuses";
 
-const login = () => {
+const Login = () => {
   const { onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const [show, setShow] = React.useState(false);
@@ -177,4 +177,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

@@ -28,7 +28,7 @@ const ChakraTable = () => {
         </Thead>
        
         <Tbody>
-          {allTrips.map((trip) => (<Tr>
+          {allTrips.map((trip) => (<Tr key={trip.id}>
             <Td>{trip.trip_id}</Td>
             <Td>{trip.trips_status}</Td>
             <Td>{trip.origin}</Td>

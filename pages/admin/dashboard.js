@@ -25,7 +25,7 @@ const Dashboard = () => {
   useEffect(() => {
     getBuses();
     handleFetchAllTrips();
-  }, [allTrips]);
+  }, []);
   return (
     <div>
       <AdminShell>

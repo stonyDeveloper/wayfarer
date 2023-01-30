@@ -47,7 +47,7 @@ const HomePage = () => {
           </div>
           <div className="flex items-center gap-5">
             <img className="" src="/msg-icon.png" alt="" />
-            <p>We're Here For You 24/7</p>
+            <p>We&apos;re Here For You 24/7</p>
           </div>
           <div className="flex items-center gap-5">
             <img className="" src="/trip-icon.png" alt="" />
