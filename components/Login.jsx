@@ -89,7 +89,7 @@ const Login = ({ login, toggleLogin, goToSignup, setIsLoading, setForgotPassword
                 {/* <FontAwesomeIcon icon={faEye}/> */}
               </form>
               <div className="flex justify-between items-center mt-[40px]">
-              <p>Don't have an account? <span onClick={goToSignup} className="underline cursor-pointer">Sign up here!</span></p>
+              <p>Don&apos;t have an account? <span onClick={goToSignup} className="underline cursor-pointer">Sign up here!</span></p>
               <p onClick={goToForgotPassword} className="underline cursor-pointer">Forgot password?</p>
               </div>
             </div>

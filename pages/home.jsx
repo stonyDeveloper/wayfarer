@@ -61,20 +61,20 @@ const HomePage = () => {
               Is Wayfarer right for you?
             </span>{" "}
             <span className="text-[17px] font-light">
-              Here's what our users think
+              Here&apos;s what our users think
             </span>
           </h2>
           <div className="flex mt-[30px] justify-between">
             <div className="border-black border-[1px] py-[5px] px-[10px] rounded-md">
-              <p>"Perfect Organisation- good communication"</p>
+              <p>&apos;Perfect Organisation- good communication&apos;</p>
               <p className="mt-[20px]">- Buchi Emecheta</p>
             </div>
             <div className="border-black border-[1px] py-[5px] px-[10px] rounded-md">
-              <p>"Perfect Organisation- good communication"</p>
+              <p>&apos;Perfect Organisation- good communication&apos;</p>
               <p className="mt-[20px]">- Zulu Sofola</p>
             </div>
             <div className="border-black border-[1px] py-[5px] px-[10px] rounded-md">
-              <p>"Perfect Organisation- good communication"</p>
+              <p>&apos;Perfect Organisation- good communication&apos;</p>
               <p className="mt-[20px]">- Jagua Nana</p>
             </div>
           </div>
