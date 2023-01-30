@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Hero from "../components/Hero";
 import Login from "../components/Login";
-import { useContext } from "react";
-import { DataContext } from "../context/DataContext";
 import Signup from "../components/Signup";
 import { ColorRing } from "react-loader-spinner";
 import ForgotPassword from "../components/ForgotPassword";
