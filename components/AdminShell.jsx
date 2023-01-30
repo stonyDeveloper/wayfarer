@@ -12,7 +12,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useEffect, useContext } from "react";
 import Cookies from "js-cookie";
-import { DataContext } from "../context/DataContext";
+import { DataContext } from "../Context/DataContext";
 import { useRouter } from "next/router";
 import useLogout from "../hooks/useLogout";
 import useFetchAllTrips from "../hooks/useFetchAllTrips";

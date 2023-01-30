@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useContext } from "react";
-import { DataContext } from "../context/DataContext";
+import { DataContext } from "../Context/DataContext";
 
 const ChakraTable = () => {
   const { allTrips } = useContext(DataContext)

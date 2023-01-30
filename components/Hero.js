@@ -1,9 +1,7 @@
 import React from "react";
 // import Typical from "react-typical";
-import { useContext } from "react";
-import { DataContext } from "../context/DataContext";
 
-const Hero = ({ toggleLogin, toggleSignup } ) => {
+const Hero = ({ toggleLogin, toggleSignup }) => {
   return (
     <div className="hero h-[60vh] text-white">
       <div className="nav px-20 py-4 flex items-center justify-between">
@@ -14,15 +12,25 @@ const Hero = ({ toggleLogin, toggleSignup } ) => {
         </div>
 
         <div className="btns flex items-center gap-[40px]">
-            <p onClick={toggleLogin}  className="text-[20px] cursor-pointer hover:underline hover:text-[#004643]">Login</p>
-            <button onClick={toggleSignup} className="border-[1px] py-4 rounded-md px-6 hover:bg-[#004643]">Create Account</button>
+          <p
+            onClick={toggleLogin}
+            className="text-[20px] cursor-pointer hover:underline hover:text-[#004643]"
+          >
+            Login
+          </p>
+          <button
+            onClick={toggleSignup}
+            className="border-[1px] py-4 rounded-md px-6 hover:bg-[#004643]"
+          >
+            Create Account
+          </button>
         </div>
       </div>
 
       <div className="flex justify-center mt-[50px]">
         <p className="text-[55px] font-light text-center">
-            Travel to the world’s best locations via <br />
-            <span className="ml-[10px]">  
+          Travel to the world’s best locations via <br />
+          <span className="ml-[10px]">
             {/* <Typical
                 loop={Infinity}
                 wrapper="b"
@@ -34,8 +42,7 @@ const Hero = ({ toggleLogin, toggleSignup } ) => {
                 ]
                 }
             /> */}
-            </span>
-        
+          </span>
         </p>
       </div>
     </div>

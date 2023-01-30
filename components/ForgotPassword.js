@@ -2,8 +2,6 @@ import Input from "./Input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useContext } from "react";
-import { DataContext } from "../context/DataContext";
 import { Formik } from "formik";
 import Link from "next/link";
 import { userLogin } from "../Authentication/Login/login";
