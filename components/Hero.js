@@ -1,5 +1,5 @@
 import React from "react";
-import Typical from "react-typical";
+// import Typical from "react-typical";
 import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 
@@ -23,7 +23,7 @@ const Hero = ({ toggleLogin, toggleSignup } ) => {
         <p className="text-[55px] font-light text-center">
             Travel to the world’s best locations via <br />
             <span className="ml-[10px]">  
-            <Typical
+            {/* <Typical
                 loop={Infinity}
                 wrapper="b"
                 steps={[
@@ -33,7 +33,7 @@ const Hero = ({ toggleLogin, toggleSignup } ) => {
                     5000
                 ]
                 }
-            />
+            /> */}
             </span>
         
         </p>
