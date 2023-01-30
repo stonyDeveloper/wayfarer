@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { DataContext, DataProvider } from "../context/DataContext";
+import { DataContext, DataProvider } from "../Context/DataContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ColorRing } from "react-loader-spinner";

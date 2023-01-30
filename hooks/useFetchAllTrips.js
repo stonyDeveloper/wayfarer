@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { authApi } from "../api";
-import { DataContext } from "../context/DataContext";
-import { useContext } from "react";
 
 const useFetchAllTrips = () => {
   const [isLoading, setIsLoading] = useState(false);
