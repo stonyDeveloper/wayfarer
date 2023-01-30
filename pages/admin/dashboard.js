@@ -1,20 +1,31 @@
 import React, { useEffect } from "react";
 import AdminShell from "../../components/AdminShell";
 import { useContext } from "react";
-import { AuthContext } from "../../Context/AuthContext";
+import { DataContext } from "../../Context/DataContext";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import { useFetchAvailableBuses } from "../../helpers/fetchAvailableBuses";
 import { SpinnerIcon } from "@chakra-ui/icons";
-import { Card, CardBody, CardHeader, Flex, Text } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Flex,
+  Skeleton,
+  Text,
+} from "@chakra-ui/react";
 import PopOver from "../../components/PopOver";
 import Table from "../../components/ChakraTable";
 import ChakraTable from "../../components/ChakraTable";
+import useFetchAllTrips from "../../hooks/useFetchAllTrips";
 const dashboard = () => {
   const { getBuses } = useFetchAvailableBuses();
+  const { handleFetchAllTrips, isLoading } = useFetchAllTrips();
+  const { allTrips } = useContext(DataContext);
   useEffect(() => {
     getBuses();
-  }, []);
+    handleFetchAllTrips();
+  }, [allTrips]);
   return (
     <div>
       <AdminShell>
@@ -46,9 +57,9 @@ const dashboard = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-              <div className="text-[80px]">
-              <i class="fa fa-bus" aria-hidden="true"></i>
-              </div>
+                <div className="text-[80px]">
+                  <i class="fa fa-bus" aria-hidden="true"></i>
+                </div>
               </CardBody>
             </Card>
             <Card
@@ -68,10 +79,9 @@ const dashboard = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-              <div className="text-[80px]">
-
-              <i class="fa fa-suitcase" aria-hidden="true"></i>
-              </div>
+                <div className="text-[80px]">
+                  <i class="fa fa-suitcase" aria-hidden="true"></i>
+                </div>
               </CardBody>
             </Card>
             <Card
@@ -91,18 +101,19 @@ const dashboard = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-              <div className="text-[80px]">
-              <i class="fa fa-bus" aria-hidden="true"></i>
-              </div>
+                <div className="text-[80px]">
+                  <i class="fa fa-bus" aria-hidden="true"></i>
+                </div>
               </CardBody>
             </Card>
           </div>
         </div>
 
-      <div className="mt-[70px]">
-      <ChakraTable />
-      
-      </div>
+        <div className="mt-[70px]">
+          <Skeleton className="w-fit" isLoaded={!isLoading}>
+            <ChakraTable />
+          </Skeleton>
+        </div>
       </AdminShell>
     </div>
   );

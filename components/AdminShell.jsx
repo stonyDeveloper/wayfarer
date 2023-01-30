@@ -15,21 +15,31 @@ import Cookies from "js-cookie";
 import { DataContext } from "../context/DataContext";
 import { useRouter } from "next/router";
 import useLogout from "../hooks/useLogout";
+import useFetchAllTrips from "../hooks/useFetchAllTrips";
 
 const AdminShell = ({ children }) => {
   const { user } = useContext(DataContext);
   const route = useRouter().pathname;
   const { handleLogout } = useLogout();
+  const { handleFetchAllTrips, isLoading } = useFetchAllTrips()
   // console.log('Present Route', router.pathname)
   const token = Cookies.get("user_data")
     ? JSON.parse(Cookies.get("user_data")).token
     : null;
   const router = useRouter();
 
+  // useEffect(() => {
+  //   router.events.on('routeChangeStart', (url, { shallow }) => {
+  //     console.log(`routing to ${url}`, `is shallow routing: ${shallow}`);
+  //     // token ? router.push(`${router.pathname}`) : router.push("/admin");
+  //   });
+  // }, []);
+
   useEffect(() => {
     token ? router.push(`${router.pathname}`) : router.push("/admin");
     console.log(token, "AuthState");
-  }, [token]);
+    // handleFetchAllTrips()
+  }, []);
 
   return (
     <div>
