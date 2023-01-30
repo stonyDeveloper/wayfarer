@@ -18,7 +18,7 @@ import PopOver from "../../components/PopOver";
 import Table from "../../components/ChakraTable";
 import ChakraTable from "../../components/ChakraTable";
 import useFetchAllTrips from "../../hooks/useFetchAllTrips";
-const dashboard = () => {
+const Dashboard = () => {
   const { getBuses } = useFetchAvailableBuses();
   const { handleFetchAllTrips, isLoading } = useFetchAllTrips();
   const { allTrips } = useContext(DataContext);
@@ -119,4 +119,4 @@ const dashboard = () => {
   );
 };
 
-export default dashboard;
+export default Dashboard;
