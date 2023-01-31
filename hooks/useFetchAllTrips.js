@@ -7,10 +7,11 @@ const useFetchAllTrips = () => {
   const handleFetchAllTrips = async () => {
     try {
       setIsLoading(true);
-      const trips = await authApi.get("/api/v1/trip/filter-trips");
-      console.log(trips?.data?.data?.trips, "handlefetchalltrips");
-      localStorage.setItem('all_trips', JSON.stringify(trips?.data?.data?.trips))
+      const res = await authApi.get("/api/v1/trip/filter-trips");
+      console.log(res?.data?.data?.trips, "handlefetchalltrips");
+      localStorage.setItem('all_trips', JSON.stringify(res?.data?.data?.trips))
       setIsLoading(false);
+      return res.data
     } catch (error) {
       console.log(error);
       setIsLoading(false);

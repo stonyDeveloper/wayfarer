@@ -9,15 +9,23 @@ import { DataContext } from "../../Context/DataContext";
 import Cookies from "js-cookie";
 import InputFieldDropdown from "../../components/InputFieldDropdown";
 import { ColorRing } from "react-loader-spinner";
+import { useQuery } from "@tanstack/react-query";
+import { useFetchAvailableBuses } from "../../helpers/fetchAvailableBuses";
 
 const CreateTrip = () => {
   const { showDropdown, setShowDropdown } = useContext(DataContext);
-  const { handleCreatetrip, isLoading } = useCreateTrip();
+  const { handleCreatetrip, isLoading} = useCreateTrip();
+  const { getBuses } = useFetchAvailableBuses()
   const availableBuses = Cookies.get("available_buses")
     ? JSON.parse(Cookies.get("available_buses"))
     : null;
   console.log(availableBuses, "Available");
   const [busId, setBusId] = useState("Bus ID");
+
+  const { error, data, isFetching } = useQuery({
+    queryKey: ['availableBuses'],
+    queryFn: getBuses
+  })
 
   return (
     <Formik

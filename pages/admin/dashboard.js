@@ -18,14 +18,23 @@ import PopOver from "../../components/PopOver";
 import Table from "../../components/ChakraTable";
 import ChakraTable from "../../components/ChakraTable";
 import useFetchAllTrips from "../../hooks/useFetchAllTrips";
+import { useQuery } from "@chakra-ui/react";
+
+
+
 const Dashboard = () => {
   const { getBuses } = useFetchAvailableBuses();
-  const { handleFetchAllTrips, isLoading } = useFetchAllTrips();
-  const { allTrips } = useContext(DataContext);
+  const { handleFetchAllTrips } = useFetchAllTrips();
+  // const { allTrips } = useContext(DataContext);
   useEffect(() => {
-    getBuses();
-    handleFetchAllTrips();
-  },[allTrips]);
+    // getBuses();
+    // handleFetchAllTrips();
+  },[]);
+
+  const {isLoading, error, data, isFetching} = useQuery({
+    queryKey: ['allTrips'],
+    queryFn: () => handleFetchAllTrips
+  })
   return (
     <div>
       <AdminShell>

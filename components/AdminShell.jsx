@@ -16,17 +16,24 @@ import { DataContext } from "../Context/DataContext";
 import { useRouter } from "next/router";
 import useLogout from "../hooks/useLogout";
 import useFetchAllTrips from "../hooks/useFetchAllTrips";
+import { useQuery } from "@tanstack/react-query";
 
 const AdminShell = ({ children }) => {
   const { user } = useContext(DataContext);
   const route = useRouter().pathname;
   const { handleLogout } = useLogout();
-  const { handleFetchAllTrips, isLoading } = useFetchAllTrips()
+  const { handleFetchAllTrips} = useFetchAllTrips()
   // console.log('Present Route', router.pathname)
   const token = Cookies.get("user_data")
     ? JSON.parse(Cookies.get("user_data")).token
     : null;
   const router = useRouter();
+
+
+  const {isLoading, error, data, isFetching} = useQuery({
+    queryKey: ['allTrips'],
+    queryFn: () => handleFetchAllTrips
+  })
 
   // useEffect(() => {
   //   router.events.on('routeChangeStart', (url, { shallow }) => {
@@ -42,6 +49,7 @@ const AdminShell = ({ children }) => {
   }, []);
 
   return (
+    <>
     <div>
       <Stack direction={"row"}>
         <div className="pt-[70px] pl-[30px] w-[27%] min-h-screen bg-[#004643] text-white">
@@ -119,6 +127,7 @@ const AdminShell = ({ children }) => {
         <div className="w-full pt-[70px] pl-[30px]">{children}</div>
       </Stack>
     </div>
+    </>
   );
 };
 
