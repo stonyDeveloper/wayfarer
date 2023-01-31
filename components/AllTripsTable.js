@@ -16,9 +16,10 @@ import { useQuery } from "@tanstack/react-query";
 import useFetchAllTrips from "../hooks/useFetchAllTrips";
 import { Skeleton } from "@chakra-ui/react";
 
-const { handleFetchAllTrips } = useFetchAllTrips();
 
 const AllTripsTable = () => {
+const { handleFetchAllTrips } = useFetchAllTrips();
+
 
   const { isLoading, error, data, isFetching } = useQuery({
     queryKey: ["allTrips"],
