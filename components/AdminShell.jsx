@@ -30,10 +30,7 @@ const AdminShell = ({ children }) => {
   const router = useRouter();
 
 
-  const {isLoading, error, data, isFetching} = useQuery({
-    queryKey: ['allTrips'],
-    queryFn: () => handleFetchAllTrips
-  })
+ 
 
   // useEffect(() => {
   //   router.events.on('routeChangeStart', (url, { shallow }) => {

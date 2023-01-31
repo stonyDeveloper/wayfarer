@@ -16,16 +16,17 @@ const CreateTrip = () => {
   const { showDropdown, setShowDropdown } = useContext(DataContext);
   const { handleCreatetrip, isLoading} = useCreateTrip();
   const { getBuses } = useFetchAvailableBuses()
-  const availableBuses = Cookies.get("available_buses")
-    ? JSON.parse(Cookies.get("available_buses"))
-    : null;
-  console.log(availableBuses, "Available");
+  // const availableBuses = Cookies.get("available_buses")
+  //   ? JSON.parse(Cookies.get("available_buses"))
+  //   : null;
+  // console.log(availableBuses, "Available");
   const [busId, setBusId] = useState("Bus ID");
 
   const { error, data, isFetching } = useQuery({
     queryKey: ['availableBuses'],
     queryFn: getBuses
   })
+
 
   return (
     <Formik
@@ -171,7 +172,7 @@ const CreateTrip = () => {
                     {showDropdown && (
                       <div className="w-[400px] absolute top-[90px]">
                         <InputFieldDropdown
-                          dropdownList={availableBuses}
+                          dropdownList={data}
                           setBusId={setBusId}
                           setShowDropdown={setShowDropdown}
                         />

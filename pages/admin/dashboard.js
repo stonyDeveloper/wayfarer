@@ -15,8 +15,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import PopOver from "../../components/PopOver";
-import Table from "../../components/ChakraTable";
-import ChakraTable from "../../components/ChakraTable";
+import Table from "../../components/AllTripsTable";
+import AllTripsTable from "../../components/AllTripsTable";
 import useFetchAllTrips from "../../hooks/useFetchAllTrips";
 import { useQuery } from "@chakra-ui/react";
 
@@ -25,16 +25,13 @@ import { useQuery } from "@chakra-ui/react";
 const Dashboard = () => {
   const { getBuses } = useFetchAvailableBuses();
   const { handleFetchAllTrips } = useFetchAllTrips();
-  // const { allTrips } = useContext(DataContext);
-  useEffect(() => {
-    // getBuses();
-    // handleFetchAllTrips();
-  },[]);
 
   const {isLoading, error, data, isFetching} = useQuery({
     queryKey: ['allTrips'],
-    queryFn: () => handleFetchAllTrips
+    queryFn: handleFetchAllTrips()
   })
+
+  // console.log(data, "dashboard data")
   return (
     <div>
       <AdminShell>
@@ -119,9 +116,9 @@ const Dashboard = () => {
         </div>
 
         <div className="mt-[70px]">
-          <Skeleton className="w-fit" isLoaded={!isLoading}>
-            <ChakraTable />
-          </Skeleton>
+            <AllTripsTable
+              data={data}
+            />
         </div>
       </AdminShell>
     </div>
