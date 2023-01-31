@@ -52,7 +52,7 @@ const AdminShell = ({ children }) => {
         <div className="pt-[70px] pl-[30px] w-[27%] min-h-screen bg-[#004643] text-white">
           <Link href="/admin/dashboard"><p className="text-[30px]">Admin Dashboard</p></Link>
           <div>
-            {user
+            {user != undefined && user != null
               ? user?.first_name?.[0]?.toUpperCase() +
                 user.first_name?.slice(1) +
                 " " +
