@@ -8,7 +8,7 @@ const useFetchAllTrips = () => {
     try {
       console.log("This hook is working")
       // setIsLoading(true);
-      const res = await authApi.get("/api/v1/trip/filter-trips");
+      const res =  await authApi.get("/api/v1/trip/filter-trips")
       console.log(res?.data?.data.trips, "handlefetchalltrips");
       // localStorage.setItem('all_trips', JSON.stringify(res?.data?.data?.trips))
       // setIsLoading(false);

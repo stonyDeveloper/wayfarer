@@ -17,8 +17,10 @@ import { useRouter } from "next/router";
 import useLogout from "../hooks/useLogout";
 import useFetchAllTrips from "../hooks/useFetchAllTrips";
 import { useQuery } from "@tanstack/react-query";
+import useAuth from "../hooks/useAuth";
 
 const AdminShell = ({ children }) => {
+  const { isAuthenticated, isLoading } = useAuth()
   const { user } = useContext(DataContext);
   const route = useRouter().pathname;
   const { handleLogout } = useLogout();
