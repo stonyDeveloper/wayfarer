@@ -23,13 +23,9 @@ import { useQuery } from "@chakra-ui/react";
 
 
 const Dashboard = () => {
-  const { getBuses } = useFetchAvailableBuses();
-  const { handleFetchAllTrips } = useFetchAllTrips();
+  
 
-  const {isLoading, error, data, isFetching} = useQuery({
-    queryKey: ['allTrips'],
-    queryFn: handleFetchAllTrips()
-  })
+
 
   // console.log(data, "dashboard data")
   return (
@@ -117,7 +113,6 @@ const Dashboard = () => {
 
         <div className="mt-[70px]">
             <AllTripsTable
-              data={data}
             />
         </div>
       </AdminShell>

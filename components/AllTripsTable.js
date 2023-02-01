@@ -24,6 +24,7 @@ const { handleFetchAllTrips } = useFetchAllTrips();
   const { isLoading, error, data, isFetching } = useQuery({
     queryKey: ["allTrips"],
     queryFn: handleFetchAllTrips,
+    refetchInterval: 3000
   });
 
   return (
